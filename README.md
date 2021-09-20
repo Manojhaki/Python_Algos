@@ -1,2 +1,2 @@
 
-<iframe src="https://giphy.com/embed/KAq5w47R9rmTuvWOWa" width="480" height="476" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/devrock-python-django-edr-KAq5w47R9rmTuvWOWa">via GIPHY</a></p>
+![alt-text](https://media.giphy.com/media/KAq5w47R9rmTuvWOWa/giphy.gif?cid=ecf05e472t7wlnpq91je4d6jsbzmgctbla9lu2a3t8psau1u&rid=giphy.gif&ct=g)
