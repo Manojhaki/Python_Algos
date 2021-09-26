@@ -13,4 +13,4 @@ def bubblesort(the_list):
         print(the_list, i, j)
 
 
-bubblesort(unsorted_list)
+# bubblesort(unsorted_list)
