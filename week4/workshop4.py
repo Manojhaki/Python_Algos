@@ -50,21 +50,42 @@ class BankUser(User):
         print(self.name, "has withdrawn the amount of :", amount)
 
     def transfer_money(self, amount):
-        print("jimmy:", self.pin)
-        checkpin = input("Enter your PIN: ")
+
+        checkpin = int(input("Enter your PIN: "))
 
         if (self.pin == checkpin):
             self.balance -= amount
+            print("Tansfer Authorized.")
             return True
         else:
             print("Unsuccessful Tansfer.")
             return False
 
-    def request_money(self,):
-        checkpin = input("Enter sender's PIN: ")
+    def request_money(self, amount, sender):
+        print("")
+        print("Test your name: ", self.name)
+        print("Test your pin: ", self.pin)
+        print("Test your password: ", self.password)
+        print("")
+        print("sender's name", sender.name)
+        print("sender PIN", sender.pin)
+        print("sender pass", sender.password)
+        print("")
 
-        checkpass = input("Enter your Password: ")
+        checkpin = int(input("Enter "+sender.name + "'s PIN: "))
+        if checkpin == sender.pin:
+            checkpass = input("Enter your Password: ")
+            if checkpass == self.password:
+                print("Transfer Successful.")
+                self.balance -= amount
+                sender.balance -= amount
+            else:
+                print("Wrong Password. Transaction Canceled")
+        else:
+            print("Wrong PIN.Transaction Canceled")
 
+
+""" Driver Code for Task 3"""
 
 bankuser = BankUser("bank", 123, "banks")
 print(bankuser.name)
@@ -92,6 +113,10 @@ queen.show_balance()
 king.show_balance()
 
 
-if queen.transfer_money(500) == True:
+if queen.transfer_money(500):
     king.deposit(500)
     king.show_balance()
+
+king.request_money(100, queen)
+queen.show_balance()
+king.show_balance()
